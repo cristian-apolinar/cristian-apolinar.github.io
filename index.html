@@ -1,8 +1,321 @@
 <!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>Cristian Apolinar</title></head>
-  <body>
-    <h1>Cristian Apolinar</h1>
-    <p>Academic website coming soon.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cristian Apolinar</title>
+
+  <meta name="description" content="Cristian Apolinar — Ph.D. student in Criminology, Law & Society (UC Irvine). Quantitative and spatial criminology: GIS, geocoding, and applied statistics." />
+
+  <!-- Favicon (transparent PNG) -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <style>
+    :root{
+      --bg:#000000;
+      --card:rgba(0,0,0,.55);
+      --card-2:rgba(0,0,0,.35);
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.72);
+      --line:rgba(255,255,255,.12);
+      --accent:#2f8cff;
+      --radius:18px;
+      --shadow:0 14px 40px rgba(0,0,0,.55);
+      --max:980px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 15% 0%, rgba(47,140,255,.20), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(47,140,255,.12), transparent 55%),
+        var(--bg);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; min-width:200px}
+    .brand img{width:28px; height:28px}
+    .brand strong{letter-spacing:.2px}
+    .links{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .links a{color:var(--muted)}
+    .links a:hover{color:var(--text)}
+    main{max-width:var(--max); margin:0 auto; padding:26px 18px 64px}
+    .card{
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .card.soft{background:var(--card-2); box-shadow:none}
+    .hero{
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap:18px;
+      padding:22px;
+    }
+    .avatar{
+      width:160px; height:160px;
+      border-radius:22px;
+      object-fit:cover;
+      border:1px solid var(--line);
+      background:#0a0a0a;
+    }
+    h1{margin:0 0 6px; font-size:30px; line-height:1.2}
+    h2{margin:0 0 10px; font-size:18px}
+    .subtitle{margin:0 0 12px; color:var(--muted)}
+    .muted{color:var(--muted)}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .badge{
+      border:1px solid var(--line);
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      background:rgba(255,255,255,.03);
+    }
+    .grid{margin-top:18px; display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;}
+    .section{padding:18px}
+    ul{margin:10px 0 0 20px}
+    .list-tight li{margin:6px 0}
+    .kpi{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .pill{
+      font-size:13px; padding:5px 10px; border-radius:999px;
+      border:1px solid var(--line); color:var(--muted);
+      background:rgba(255,255,255,.03);
+    }
+    .item{padding:10px 0; border-top:1px solid var(--line);}
+    .item:first-of-type{border-top:none; padding-top:0}
+    .small{font-size:14px}
+    .two-col{columns:2; column-gap:24px}
+    footer{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+    }
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    @media (max-width:860px){
+      .grid{grid-template-columns:1fr}
+      .hero{grid-template-columns:1fr}
+      .avatar{width:130px; height:130px}
+      .two-col{columns:1}
+      .brand{min-width:auto}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="/favicon.png" alt="CA logo" />
+      <strong>Cristian Apolinar</strong>
+    </div>
+    <nav class="links" aria-label="Primary">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="card hero" id="home">
+    <img class="avatar" src="headshot.jpg" alt="Headshot of Cristian Apolinar" />
+    <div>
+      <h1>Cristian Apolinar</h1>
+      <p class="subtitle">
+        Ph.D. Student, Criminology, Law & Society — University of California, Irvine (anticipated June 2026)
+      </p>
+
+      <p>
+        I conduct policy-relevant research on the collateral consequences of proactive policing, with a focus on racial/ethnic disparities,
+        community well-being, and police–community relations. I use <strong>advanced quantitative</strong> and <strong>spatial</strong> methods,
+        including geocoding and GIS workflows in <strong>Stata</strong> and <strong>ArcGIS Pro</strong>.
+      </p>
+
+      <div class="badges">
+        <span class="badge">Spatial criminology</span>
+        <span class="badge">Geocoding</span>
+        <span class="badge">Stata</span>
+        <span class="badge">ArcGIS Pro</span>
+        <span class="badge">Longitudinal analysis</span>
+      </div>
+
+      <div class="kpi">
+        <span class="pill">UC Irvine — CLS</span>
+        <span class="pill">Mentoring & teaching</span>
+        <span class="pill">Spanish (native), English (fluent)</span>
+      </div>
+
+      <p class="muted small" style="margin-top:12px">
+        Tip: add your Google Scholar / ORCID / GitHub links below once you’re ready.
+      </p>
+    </div>
+  </section>
+
+  <div class="grid">
+    <!-- RESEARCH -->
+    <section class="card section" id="research">
+      <h2>Research</h2>
+      <ul class="list-tight">
+        <li><strong>Proactive policing & collateral consequences</strong>: unintended community effects and disparities.</li>
+        <li><strong>Spatial analysis</strong>: mapping, hotspot approaches, and place-based evaluation.</li>
+        <li><strong>Reproducible workflows</strong>: geocoding pipelines, data cleaning, documentation, replication materials.</li>
+      </ul>
+
+      <div class="item">
+        <div><strong>Current focus</strong></div>
+        <div class="muted">
+          Examining the secondary effects of LAPD’s Operation LASER and related proactive strategies on neighborhoods.
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="card section soft">
+      <h2>Highlights</h2>
+
+      <div class="item">
+        <div><strong>Fellowships & awards</strong></div>
+        <div class="muted small">
+          CLS Internal Quarterly Fellowship (CIQF, Jan 2026); NextGen Pathways Mentor Award (Jul 2024);
+          Research Discovery Program Mentor Fellowships (Mar & Jun 2024); CLS Pedagogical Certificate Fellowship (Dec 2023);
+          CSU Chancellor’s Doctoral Incentive Program (CDIP) Fellowship (Jun 2020).
+        </div>
+      </div>
+
+      <div class="item">
+        <div><strong>Methods & tools</strong></div>
+        <div class="muted small">
+          Stata, ArcGIS Pro, Python (data management, web scraping, geocoding), Excel/SPSS.
+        </div>
+      </div>
+
+      <div class="item">
+        <div><strong>Affiliations</strong></div>
+        <div class="muted small">
+          APPAM · ASC · WSC · LSA · SACNAS
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PUBLICATIONS / WORKING PAPERS -->
+  <section class="card section" id="publications" style="margin-top:18px">
+    <h2>Publications & Working Papers</h2>
+
+    <div class="item">
+      <div><strong>Aggressive policing as an individual and environmental social determinant of health among urban adolescents</strong></div>
+      <div class="muted small">
+        Geller, A., Al-Naiem, K., Apolinar, C., et al. (Under review; listed Nov 2025).
+      </div>
+    </div>
+
+    <p class="muted small" style="margin-top:10px">
+      Add your Google Scholar link here when you have it.
+    </p>
+  </section>
+
+  <!-- PRESENTATIONS -->
+  <section class="card section soft" style="margin-top:18px">
+    <h2>Selected Presentations</h2>
+
+    <div class="item">
+      <div><strong>Examining the secondary effects of the LAPD’s Operation LASER on Los Angeles neighborhoods</strong></div>
+      <div class="muted small">APPAM (Nov 2025) · WSC (Feb 2022; preliminary results)</div>
+    </div>
+
+    <div class="item">
+      <div><strong>The collateral consequences of proactive policing: impacts on assessment scores</strong></div>
+      <div class="muted small">WSC (Feb 2025)</div>
+    </div>
+
+    <div class="item">
+      <div><strong>The impact of hot spot policing on neighborhood desirability</strong></div>
+      <div class="muted small">WSC (Feb 2024)</div>
+    </div>
+
+    <div class="item">
+      <div><strong>Examining financial disadvantage and contact with police</strong></div>
+      <div class="muted small">ASC (Nov 2019)</div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <!-- TEACHING -->
+    <section class="card section" id="teaching">
+      <h2>Teaching</h2>
+      <p class="muted small">Teaching Assistant (UC Irvine)</p>
+      <ul class="list-tight">
+        <li><strong>Introduction to Criminology, Law & Society</strong> (Winter 2026) — 700 students</li>
+        <li><strong>Crime, Law & Trauma</strong> (Fall 2025)</li>
+        <li><strong>Homeland Security & Society</strong> (Spring 2025)</li>
+        <li><strong>Fundamentals of Criminology, Law & Society</strong> (Fall 2023; Winter 2025)</li>
+        <li><strong>Forensic Science, Law, and Society</strong> (Fall 2024)</li>
+        <li><strong>Miscarriages of Justice</strong> (Fall 2024)</li>
+        <li><strong>Surveillance and Society</strong> (Winter 2024)</li>
+        <li><strong>Research Design</strong> (Winter 2023)</li>
+      </ul>
+
+      <div class="item">
+        <div><strong>Data Analysis Lab Instructor</strong> (Jan–Mar 2024)</div>
+        <div class="muted small">Weekly Stata labs for doctoral students; office hours and tailored instruction.</div>
+      </div>
+    </section>
+
+    <!-- CV + CONTACT -->
+    <section class="card section soft" id="cv">
+      <h2>CV</h2>
+      <p>Download: <a href="/cv.pdf">cv.pdf</a></p>
+      <p class="muted small">
+        Keep the filename exactly <code>cv.pdf</code> so this link never breaks.
+      </p>
+
+      <div class="item" id="contact">
+        <h2 style="margin:0 0 10px">Contact</h2>
+        <div class="two-col small">
+          <p><strong>Email:</strong> apolinac@uci.edu</p>
+          <p><strong>Phone:</strong> 805-628-6540</p>
+          <p><strong>Location:</strong> Ventura, CA</p>
+          <p><strong>Languages:</strong> Spanish (native), English (fluent), Italian (limited)</p>
+        </div>
+        <p class="muted small">
+          You can add external links here: Google Scholar · ORCID · GitHub · LinkedIn
+        </p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  © <span id="y"></span> Cristian Apolinar · Built on GitHub Pages
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
 </html>
