@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cristian Apolinar</title>
 
-  <meta name="description" content="Cristian Apolinar — Ph.D. student in Criminology, Law & Society (UC Irvine). Quantitative and spatial criminology: GIS, geocoding, and applied statistics." />
+  <meta name="description" content="Cristian Apolinar — Doctoral Candidate in Criminology, Law & Society (UC Irvine). Quantitative and spatial criminology: GIS, geocoding, and applied statistics." />
 
-  <!-- Favicon (transparent PNG) -->
   <link rel="icon" type="image/png" href="/favicon.png" />
 
   <style>
@@ -53,7 +52,7 @@
     }
     .brand{display:flex; align-items:center; gap:10px; min-width:200px}
     .brand img{width:28px; height:28px}
-    .brand strong{letter-spacing:.2px}
+    .brand .name{letter-spacing:.2px; font-weight:600}
     .links{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
     .links a{color:var(--muted)}
     .links a:hover{color:var(--text)}
@@ -80,6 +79,7 @@
     }
     h1{margin:0 0 6px; font-size:30px; line-height:1.2}
     h2{margin:0 0 10px; font-size:18px}
+    h3{margin:0 0 8px; font-size:16px}
     .subtitle{margin:0 0 12px; color:var(--muted)}
     .muted{color:var(--muted)}
     .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
@@ -105,6 +105,9 @@
     .item:first-of-type{border-top:none; padding-top:0}
     .small{font-size:14px}
     .two-col{columns:2; column-gap:24px}
+    .meta{color:var(--muted); font-size:14px}
+    .role{font-weight:600}
+    .nowrap{white-space:nowrap}
     footer{
       max-width:var(--max);
       margin:0 auto;
@@ -128,12 +131,20 @@
   <div class="nav">
     <div class="brand">
       <img src="/favicon.png" alt="CA logo" />
-      <strong>Cristian Apolinar</strong>
+      <div class="name">Cristian Apolinar</div>
     </div>
     <nav class="links" aria-label="Primary">
       <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Honors And Awards</a>
+      <a href="#experience">Professional Experience</a>
       <a href="#publications">Publications</a>
+      <a href="#presentations">Presentations</a>
       <a href="#teaching">Teaching</a>
+      <a href="#volunteer">Volunteer Work</a>
+      <a href="#development">Professional Development</a>
+      <a href="#skills">Technical Skills</a>
+      <a href="#affiliations">Professional Affiliations</a>
       <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -147,31 +158,29 @@
     <div>
       <h1>Cristian Apolinar</h1>
       <p class="subtitle">
-        Doctoral Candidate | Criminology, Law & Society | University of California, Irvine
+        Doctoral Candidate | Criminology, Law &amp; Society | University of California, Irvine
       </p>
 
       <p>
-        My work employs a combination of quantitative and spatial methods to conduct policy-relevant research that examines the collateral consequences of proactive policing strategies,
-        with particular attention to racial and ethnic disparities, community well-being, and police–community relations.
+        My work employs quantitative and spatial methods to conduct policy-relevant research on the collateral consequences of proactive policing strategies,
+        with attention to racial and ethnic disparities, community well-being, and police–community relations.
       </p>
 
-      <div class="badges">
+      <div class="badges" aria-label="Methods and tools">
         <span class="badge">Stata</span>
         <span class="badge">ArcGIS Pro</span>
-        <span class="badge">Spatial Criminology</span>        
-        <span class="badge">Neighborhoods & Crime</span>
+        <span class="badge">Python</span>
+        <span class="badge">Spatial criminology</span>
         <span class="badge">Geocoding</span>
+        <span class="badge">Longitudinal analysis</span>
+        <span class="badge">Time series analysis</span>
       </div>
 
-      <div class="kpi">
-        <span class="badge">Time Series Analysis</span>
-        <span class="badge">Longitudinal Analysis</span>
-        <span class="pill">Mentoring & Teaching</span>
-        <span class="pill">Spanish (native), English (fluent)</span>
+      <div class="kpi" aria-label="Quick facts">
+        <span class="pill">Spanish (native)</span>
+        <span class="pill">English (fluent)</span>
+        <span class="pill">Italian (limited)</span>
       </div>
-
-      <p class="muted small" style="margin-top:12px">
-      </p>
     </div>
   </section>
 
@@ -180,100 +189,251 @@
     <section class="card section" id="research">
       <h2>Research</h2>
       <ul class="list-tight">
-        <li><strong>Proactive policing & collateral consequences</strong>: unintended community effects and disparities.</li>
-        <li><strong>Spatial analysis</strong>: mapping, hotspot approaches, and place-based evaluation.</li>
-        <li><strong>Reproducible workflows</strong>: geocoding pipelines, data cleaning, documentation, replication materials.</li>
+        <li>Proactive policing and collateral consequences, including unintended community effects and disparities.</li>
+        <li>Spatial analysis, including mapping, hot spot approaches, and place-based evaluation.</li>
+        <li>Reproducible workflows, including geocoding pipelines, data cleaning, documentation, and replication materials.</li>
       </ul>
 
       <div class="item">
-        <div><strong>Current focus</strong></div>
-        <div class="muted">
-          Examining the secondary effects of LAPD’s Operation LASER and related proactive strategies on neighborhoods.
+        <div class="role">Current Focus</div>
+        <div class="meta">
+          Examining the secondary effects of the LAPD’s Operation LASER and related proactive strategies on neighborhoods.
         </div>
       </div>
     </section>
 
-    <!-- HIGHLIGHTS -->
+    <!-- QUICK HIGHLIGHTS -->
     <section class="card section soft">
       <h2>Highlights</h2>
 
       <div class="item">
-        <div><strong>Fellowships & awards</strong></div>
-        <div class="muted small">
-          CLS Internal Quarterly Fellowship (CIQF, Jan 2026); NextGen Pathways Mentor Award (Jul 2024);
-          Research Discovery Program Mentor Fellowships (Mar & Jun 2024); CLS Pedagogical Certificate Fellowship (Dec 2023);
-          CSU Chancellor’s Doctoral Incentive Program (CDIP) Fellowship (Jun 2020).
+        <div class="role">Selected Honors And Awards</div>
+        <div class="meta small">
+          Criminology, Law &amp; Society Internal Quarterly Fellowship (CIQF), January 2026; NextGen Pathways Mentor Award, July 2024;
+          Research Discovery Program (RDP) Mentor Fellowships, March 2024 and June 2024; CLS Pedagogical Certificate Program Fellowship, December 2023;
+          CSU Chancellor’s Doctoral Incentive Program (CDIP) Fellowship, June 2020.
         </div>
       </div>
 
       <div class="item">
-        <div><strong>Methods & tools</strong></div>
-        <div class="muted small">
-          Stata, ArcGIS Pro, Python (data management, web scraping, geocoding), Excel/SPSS.
-        </div>
-      </div>
-
-      <div class="item">
-        <div><strong>Affiliations</strong></div>
-        <div class="muted small">
+        <div class="role">Scholarly Memberships</div>
+        <div class="meta small">
           APPAM · ASC · WSC · LSA · SACNAS
         </div>
       </div>
     </section>
   </div>
 
-  <!-- PUBLICATIONS / WORKING PAPERS -->
-  <section class="card section" id="publications" style="margin-top:18px">
-    <h2>Publications & Working Papers</h2>
+  <!-- EDUCATION -->
+  <section class="card section" id="education" style="margin-top:18px">
+    <h2>Education</h2>
 
     <div class="item">
-      <div><strong>Aggressive policing as an individual and environmental social determinant of health among urban adolescents</strong></div>
-      <div class="muted small">
-        Geller, A., Al-Naiem, K., Apolinar, C., et al. (Under review; Dec 2025).
+      <div>Ph.D., Criminology, Law &amp; Society, University of California, Irvine, Irvine, CA <span class="meta">(anticipated June 2026)</span></div>
+    </div>
+    <div class="item">
+      <div>M.A., Social Ecology, University of California, Irvine, Irvine, CA <span class="meta">(June 2023)</span></div>
+    </div>
+    <div class="item">
+      <div>B.A., Criminology &amp; Justice Studies, California State University, Northridge, Northridge, CA <span class="meta">(December 2019)</span></div>
+    </div>
+    <div class="item">
+      <div>A.A., Sociology, Ventura Community College, Ventura, CA <span class="meta">(May 2018)</span></div>
+    </div>
+    <div class="item">
+      <div>A.S., Criminal Justice, Ventura Community College, Ventura, CA <span class="meta">(December 2017)</span></div>
+    </div>
+    <div class="item">
+      <div>A.S., Administration of Justice, Ventura Community College, Ventura, CA <span class="meta">(December 2017)</span></div>
+    </div>
+    <div class="item">
+      <div>A.A., Social And Behavioral Sciences, Ventura Community College, Ventura, CA <span class="meta">(December 2017)</span></div>
+    </div>
+  </section>
+
+  <!-- HONORS AND AWARDS -->
+  <section class="card section soft" id="awards" style="margin-top:18px">
+    <h2>Honors And Awards</h2>
+    <ul class="list-tight">
+      <li>Criminology, Law &amp; Society Internal Quarterly Fellowship (CIQF), Department of Criminology, Law &amp; Society, University of California, Irvine (January 2026).</li>
+      <li>NextGen Pathways Mentor Award, University of California, Irvine (July 2024; $100).</li>
+      <li>Research Discovery Program (RDP) Mentor Fellowship, University of California, Irvine (June 2024; $750).</li>
+      <li>Research Discovery Program (RDP) Mentor Fellowship, University of California, Irvine (March 2024; $750).</li>
+      <li>Criminology, Law &amp; Society Pedagogical Certificate Program Fellowship, University of California, Irvine (December 2023; $1,000).</li>
+      <li>The Chancellor’s Doctoral Incentive Program (CDIP) Fellowship, California State University: Office of the Chancellor (June 2020; $30,000).</li>
+      <li>Community College Transfer Award, Department of Criminology &amp; Justice Studies, California State University, Northridge (May 2020; $500).</li>
+      <li>Community Volunteer Award, Los Angeles Police Department: Devonshire Community Police Station (December 2019).</li>
+      <li>Graduated cum laude (3.7 GPA), California State University, Northridge (December 2019).</li>
+      <li>Sally Casanova Scholarship, California Pre-Doctoral Program, California State University: Office of the Chancellor (June 2019; $3,000).</li>
+      <li>Graduated with honors (3.5 GPA), Ventura Community College (May 2018).</li>
+    </ul>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section class="card section" id="experience" style="margin-top:18px">
+    <h2>Professional Experience</h2>
+
+    <div class="item">
+      <div class="role">Doctoral Student, Department of Criminology, Law &amp; Society, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">August 2020 – Present</div>
+      <ul class="list-tight">
+        <li>Conduct policy-relevant research examining the collateral consequences of proactive policing strategies, with a focus on racial and ethnic disparities, community well-being, and police-community relations.</li>
+        <li>Utilize advanced quantitative methods, spatial statistical techniques, and longitudinal analyses to assess the unintended consequences of aggressive law enforcement tactics.</li>
+        <li>Mentor undergraduate scholars by providing research advising and letters of support, contributing to the award of over $10,000 in competitive scholarships.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Data Analysis Lab Instructor, School of Social Ecology, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">January 2024 – March 2024</div>
+      <ul class="list-tight">
+        <li>Led weekly lab sessions teaching five doctoral students core data analysis skills in Stata (syntax, variable coding, and descriptive tables).</li>
+        <li>Attended weekly seminars led by Dr. Amanda Geller and adapted lab content to align with course concepts.</li>
+        <li>Held weekly office hours to support students on seminar and lab materials.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Research Discovery Program Mentor, Undergraduate Research Opportunities Program, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">January 2024 – July 2024</div>
+      <ul class="list-tight">
+        <li>Met with four undergraduate mentees during Winter and Spring quarters to support research progress and collaboration.</li>
+        <li>Built a Google Drive resource folder on contacting academics, creating posters, and developing resumes and CVs.</li>
+        <li>Graded and provided feedback on weekly assignments, including reflections and discussion posts.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Graduate Student Researcher, Department of Criminology, Law &amp; Society, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">July 2023 – September 2023 | Supervisor: Dr. Amanda Geller</div>
+      <ul class="list-tight">
+        <li>Supported a study on aggressive policing as a social determinant of adolescent health outcomes.</li>
+        <li>Conducted data cleaning, missing data imputation, dataset merges, and created 20+ descriptive tables using Stata and Excel.</li>
+        <li>Authored replication materials and documentation to support transparency and reproducibility.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Graduate Student Researcher, Department of Criminology, Law &amp; Society, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">July 2022 – September 2022 | Supervisors: Dr. Amanda Geller &amp; Princeton University collaborators</div>
+      <ul class="list-tight">
+        <li>Developed a Python script to collect incident-level firearm data from the Gun Violence Archive in support of an NIJ grant.</li>
+        <li>Authored Stata syntax files to standardize and append daily incident data into clean yearly files for analysis.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Graduate Student Researcher, Department of Criminology, Law &amp; Society, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">March 2022 – May 2023 | Supervisors: Dr. George Tita &amp; Dr. Amanda Geller</div>
+      <ul class="list-tight">
+        <li>Evaluated the Anaheim Critical Care Response Team (CCRT) intervention using spatial analyses for stakeholders (Citi Net, Anaheim Police Department, and City of Anaheim).</li>
+        <li>Prepared individual-level data via cleaning, merges, and geocoding using Stata, Excel, Python, and ArcGIS Pro.</li>
+        <li>Produced graphs and maps to examine pre/post crime trends using Stata and ArcGIS Pro.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Lead Security Officer, Community Memorial Health System, Allied Universal Security Systems, Ventura, CA</div>
+      <div class="meta">June 2020 – August 2020</div>
+      <ul class="list-tight">
+        <li>Coordinated shift briefings, standards compliance, equipment readiness, and pass-down accuracy.</li>
+        <li>Responded to emergencies, assessed need for additional officers, and requested backup as appropriate.</li>
+        <li>Managed radio traffic, breaks, patrol execution, and team coordination while maintaining strong relationships with staff and visitors.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Security Professional, Community Memorial Health System, Allied Universal Security Systems, Ventura, CA</div>
+      <div class="meta">February 2020 – June 2020</div>
+      <ul class="list-tight">
+        <li>Conducted patrol routines to identify disturbances or suspicious behavior.</li>
+        <li>Monitored access and supported entrance/departure operations with strong customer service.</li>
+        <li>Wrote reports documenting daily activities and irregularities (e.g., damage, theft, unauthorized persons, unusual occurrences).</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Undergraduate Research Assistant, Department of Criminology &amp; Justice Studies, California State University, Northridge, Northridge, CA</div>
+      <div class="meta">August 2018 – December 2019 | Supervisor: Dr. Nayan G. Ramirez</div>
+      <ul class="list-tight">
+        <li>Conducted independent research on financial strain and criminal justice system contact using literature review, visualization, and statistical analysis in Excel.</li>
+        <li>Supported IRB documentation and prepared materials for professional conference and university presentations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="card section soft" id="publications" style="margin-top:18px">
+    <h2>Publications</h2>
+
+    <div class="item">
+      <div class="small">
+        Geller, A., Al-Naiem, K., Apolinar, C., Hobby, S., Iliff, C., Jones, P., Livings, M., Ornelas, Y., &amp; Yang, P. (2025, December).
+        <em>Aggressive policing as an individual and environmental social determinant of health among urban adolescents</em>. Under review.
       </div>
     </div>
 
-    <p class="muted small" style="margin-top:10px">
-    </p>
+    <div class="item">
+      <div class="role">Peer Reviews</div>
+      <div class="small">
+        Manuscript reviewer, <em>Journal of Research in Crime and Delinquency</em> (January 2026).
+      </div>
+    </div>
   </section>
 
   <!-- NEWS -->
   <section class="card section" id="news" style="margin-top:18px">
-  <h2>In the News</h2>
-
-  <div class="item">
-    <div><strong>Livable Cities Lab evaluates Community Response program</strong></div>
-    <div class="muted small">
-      UC Irvine School of Social Ecology ·
-      <a href="https://socialecology.uci.edu/news/livable-cities-lab-evaluates-community-response-program"
-         target="_blank" rel="noreferrer">
-        Read more
-      </a>
+    <h2>In The News</h2>
+    <div class="item">
+      <div class="role">Livable Cities Lab evaluates Community Response program</div>
+      <div class="meta small">
+        UC Irvine School of Social Ecology ·
+        <a href="https://socialecology.uci.edu/news/livable-cities-lab-evaluates-community-response-program" target="_blank" rel="noreferrer">Read more</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
   <!-- PRESENTATIONS -->
-  <section class="card section soft" style="margin-top:18px">
-    <h2>Selected Presentations</h2>
+  <section class="card section soft" id="presentations" style="margin-top:18px">
+    <h2>Presentations</h2>
 
-    <div class="item">
-      <div>Examining the secondary effects of the LAPD’s Operation LASER on Los Angeles neighborhoods</div>
-      <div class="muted small">APPAM (Nov 2025) · WSC (Feb 2022; preliminary results)</div>
+    <div class="item small">
+      Apolinar, C. (2025, November). Examining the secondary effects of the LAPD’s Operation LASER on Los Angeles neighborhoods [Conference presentation]. Association for Public Policy Analysis and Management (APPAM), Seattle, WA, United States.
     </div>
 
-    <div class="item">
-      <div>The collateral consequences of proactive policing: impacts on assessment scores</div>
-      <div class="muted small">WSC (Feb 2025)</div>
+    <div class="item small">
+      Apolinar, C. (2025, February). The collateral consequences of proactive policing: Examining potential impacts on assessment scores [Conference presentation]. Western Society of Criminology (WSC), Seattle, WA, United States.
     </div>
 
-    <div class="item">
-      <div>The impact of hot spot policing on neighborhood desirability</div>
-      <div class="muted small">WSC (Feb 2024)</div>
+    <div class="item small">
+      Zavita, K. R., Alvarez, G., Punla, C., Apolinar, C., &amp; Aguirre, A. (2024, November). ASC presidential panel: Training the teachers of tomorrow during trying times [Conference presentation]. American Society of Criminology (ASC), San Francisco, CA, United States.
     </div>
 
-    <div class="item">
-      <div>Examining financial disadvantage and contact with police</div>
-      <div class="muted small">ASC (Nov 2019)</div>
+    <div class="item small">
+      Apolinar, C., Bencomo, A., Cogswell, H., Lewis, T., Mounts, I., Rivera, B., Sta. Cruz, S., Wang, C., &amp; Serpas, D. (2024, Fall).
+      Identifying and addressing disparities in high DFW courses: Insights and proposed actions [Interactive gallery walk presentation]. Data Action Project Interactive Gallery Walk, Chancellor’s Doctoral Incentive Program (CDIP), California State University (CSU) Chancellor’s Office, Online.
+    </div>
+
+    <div class="item small">
+      Apolinar, C. (2024, February). The impact of hot spot policing on neighborhood desirability [Conference presentation]. Western Society of Criminology (WSC), Long Beach, CA, United States.
+    </div>
+
+    <div class="item small">
+      Apolinar, C. (2023, March 3). Criminology &amp; Justice Studies Graduate/Law School Panel [Panel]. California State University, Northridge (CSUN), Northridge, CA, United States.
+      <span class="meta"> (1:00 pm – 2:00 pm)</span>
+    </div>
+
+    <div class="item small">
+      Apolinar, C. (2022, February). Examining the secondary effects of the LAPD’s Operation LASER on Los Angeles neighborhoods [Conference presentation]. Western Society of Criminology (WSC), Honolulu, HI, United States. <span class="meta">(Preliminary results)</span>
+    </div>
+
+    <div class="item small">
+      Apolinar, C., Brooks, J., Garcia, Y., Johnson, C., &amp; Martinez, N. (2021, April 9). Criminology &amp; Justice Studies Graduate/Law School Panel [Panel]. California State University, Northridge (CSUN), Northridge, CA, United States.
+      <span class="meta"> (11:00 am – 12:00 pm)</span>
+    </div>
+
+    <div class="item small">
+      Apolinar, C., &amp; Ramirez, N. G. (2019, November). Examining the relationship between financial disadvantage and contact with the police [Conference presentation]. American Society of Criminology (ASC), San Francisco, CA, United States.
     </div>
   </section>
 
@@ -281,21 +441,31 @@
     <!-- TEACHING -->
     <section class="card section" id="teaching">
       <h2>Teaching Experience</h2>
-      <p class="muted small">Teaching Assistant</p>
+      <div class="meta small">Teaching Assistant</div>
       <ul class="list-tight">
-        <li>Introduction to Criminology, Law & Society (Winter 2026)</li>
-        <li>Crime, Law & Trauma (Fall 2025)</li>
-        <li>Homeland Security & Society (Spring 2025)</li>
-        <li>Fundamentals of Criminology, Law & Society (Fall 2023; Winter 2025)</li>
-        <li>Forensic Science, Law, and Society (Fall 2024)</li>
-        <li>Miscarriages of Justice (Fall 2024)</li>
-        <li>Surveillance and Society (Winter 2024)</li>
-        <li>Research Design (Winter 2023)</li>
+        <li>Introduction to Criminology, Law &amp; Society (Winter 2026), Instructor: Dr. Teresa Dalton — 700 students</li>
+        <li>Crime, Law &amp; Trauma (Fall 2025), Instructor: Dr. Teresa Dalton — 110 students</li>
+        <li>Homeland Security &amp; Society (Spring 2025), Instructor: Dr. Ygnacio Flores — 233 students</li>
+        <li>Fundamentals of Criminology, Law &amp; Society (Winter 2025), Instructor: Dr. Teresa Dalton — 533 students</li>
+        <li>Forensic Science, Law, And Society (Fall 2024), Instructor: Dr. Simon Cole — 110 students</li>
+        <li>Miscarriages of Justice (Fall 2024), Instructor: Dr. Simon Cole — 110 students</li>
+        <li>Surveillance And Society (Winter 2024), Instructor: Dr. Ygnacio Flores — 220 students</li>
+        <li>Fundamentals of Criminology, Law &amp; Society (Fall 2023), Instructor: Mr. Anthony Triola — 200 students</li>
+        <li>Introduction to Criminology, Law &amp; Society (Spring 2023), Instructor: Dr. Charis Kubrin — 290 students</li>
+        <li>Research Design (Winter 2023), Instructor: Dr. Teresa Dalton — 230 students</li>
+        <li>Theories of Punishment (Fall 2022), Instructor: Dr. Keramet Reiter — 110 students</li>
+        <li>Crime Hot Spots (Winter 2022), Instructor: Dr. Richard McCleary — 120 students</li>
+        <li>The Death Penalty (Fall 2021), Instructor: Dr. Simon Cole — 100 students</li>
+        <li>Violence In Society (Spring 2021), Instructor: Dr. George Tita — 130 students</li>
+        <li>Field Study Writing Seminar (Winter 2021), Instructor: Dr. Bryan Sykes — 35 students</li>
       </ul>
 
       <div class="item">
-        <div><strong>Data Analysis Lab Instructor</strong> (Jan–Mar 2024)</div>
-        <div class="muted small">Weekly Stata labs for doctoral students; office hours and tailored instruction.</div>
+        <div class="role">Data Analysis Lab Instructor</div>
+        <div class="meta small">January 2024 – March 2024</div>
+        <div class="small muted">
+          Weekly Stata labs for doctoral students, with office hours and tailored instruction.
+        </div>
       </div>
     </section>
 
@@ -303,22 +473,200 @@
     <section class="card section soft" id="cv">
       <h2>Curriculum Vitae</h2>
       <p>Download: <a href="/cv.pdf">cv.pdf</a></p>
-      <p class="muted small">
-      </p>
 
       <div class="item" id="contact">
         <h2 style="margin:0 0 10px">Contact</h2>
         <div class="two-col small">
-          <p><strong>Email:</strong> apolinac@uci.edu</p>
-          <p><strong>Location:</strong> Irvine, CA</p>
-          <p><strong>Languages:</strong> Spanish (native), English (fluent), Italian (limited)</p>
+          <p><span class="role">Email:</span> <a href="mailto:apolinac@uci.edu">apolinac@uci.edu</a></p>
+          <p><span class="role">Phone:</span> <a class="nowrap" href="tel:+18056286540">805-628-6540</a></p>
+          <p><span class="role">Location:</span> Irvine, CA</p>
+          <p><span class="role">LinkedIn:</span> <a href="https://www.linkedin.com/in/cristianapolinar" target="_blank" rel="noreferrer">linkedin.com/in/cristianapolinar</a></p>
         </div>
-        <p class="muted small">
-          <strong>LinkedIn:</strong> https://www.linkedin.com/in/cristianapolinar
-        </p>
       </div>
     </section>
   </div>
+
+  <!-- VOLUNTEER WORK -->
+  <section class="card section" id="volunteer" style="margin-top:18px">
+    <h2>Volunteer Work</h2>
+
+    <div class="item">
+      <div class="role">UROP Symposium Poster Presentation Judge, Undergraduate Research Opportunities Program, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">May 2024</div>
+      <ul class="list-tight">
+        <li>Assessed ten poster presentations (90-second pitch plus Q&amp;A) to support undergraduate research recognition.</li>
+        <li>Contributed to scoring used to select award recipients for the Chancellor’s Award for Excellence in Research.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">NextGen Pathways Mentor, UCI Graduate Division, Mentor Collective, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">September 2023 – September 2024</div>
+      <ul class="list-tight">
+        <li>Supported an international Master’s student through academic, emotional, and social adjustment challenges.</li>
+        <li>Shared resources and opportunities to support mentee development.</li>
+        <li>Recognized for high engagement based on logged mentor-mentee conversations.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Chair, Community Engagement Committee, University of California, Irvine, Irvine, CA</div>
+      <div class="meta">June 2021 – June 2022</div>
+      <ul class="list-tight">
+        <li>Encouraged community-based research and volunteer opportunities for students and faculty.</li>
+        <li>Promoted civic engagement and partnerships between the CLS Department and local underserved populations.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Food Pantry Volunteer, Project Understanding, Food Share of Ventura County Incorporated, Ventura, CA</div>
+      <div class="meta">March 2020</div>
+      <ul class="list-tight">
+        <li>Assembled food packages and loaded transport vehicles for distribution.</li>
+        <li>Evaluated donation quality and collaborated on efficient sorting and distribution processes.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Community Volunteer, Devonshire Area Detective Desk, Los Angeles Police Department, Northridge, CA</div>
+      <div class="meta">August 2019 – December 2019</div>
+      <ul class="list-tight">
+        <li>Provided information about policing policies across a range of incidents.</li>
+        <li>Maintained a calm and professional demeanor to help de-escalate situations.</li>
+        <li>Referred civilians to appropriate personnel, agencies, and organizations.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Community Volunteer, Devonshire Area Records Unit, Los Angeles Police Department, Northridge, CA</div>
+      <div class="meta">August 2019 – December 2019</div>
+      <ul class="list-tight">
+        <li>Inspected, copied, and filed incoming police reports.</li>
+        <li>Sorted reports by D.R. number to support effective record handling.</li>
+        <li>Followed agency policies and regulations on data oversight and confidentiality.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Student Intern, Ventura College Police Department, Ventura College, Ventura, CA</div>
+      <div class="meta">August 2016 – December 2016</div>
+      <ul class="list-tight">
+        <li>Supported a diverse student body via walk-ins and emergency phone response.</li>
+        <li>Monitored and reviewed security footage to help locate suspects or lost items.</li>
+        <li>Shadowed staff for learning experiences (e.g., ride-alongs, dispatch, LiveScan).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL DEVELOPMENT -->
+  <section class="card section soft" id="development" style="margin-top:18px">
+    <h2>Professional Development</h2>
+
+    <div class="item">
+      <div class="role">Languages</div>
+      <div class="small">Spanish (native); English (fluent); Italian (limited working proficiency).</div>
+    </div>
+
+    <div class="item">
+      <div class="role">Licenses</div>
+      <ul class="list-tight">
+        <li>Guard Registration, Bureau of Security and Investigative Services, California Department of Consumer Affairs (February 2020 – February 2022).</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Certifications</div>
+      <ul class="list-tight">
+        <li>Adult CPR/AED, Pediatric CPR, and First Aid, American Red Cross (February 2023 – February 2025).</li>
+        <li>Question, Persuade, Refer Suicide Prevention Training, QPR Institute (November 2022 – November 2024).</li>
+        <li>Question, Persuade, Refer Suicide Prevention Training, QPR Institute (October 2021 – October 2023).</li>
+        <li>Adult CPR/AED, Pediatric CPR, and First Aid, American Red Cross (September 2019 – September 2021).</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Certificates Of Achievement</div>
+      <ul class="list-tight">
+        <li>Student Success Analytics Certificate Program, California State University: Office of the Chancellor (November 2024).</li>
+        <li>2024 Veteran Health &amp; Wellness Summit Certificate of Participation (6 hours), Orange County Health Care Agency, Behavioral Health Services (October 2024).</li>
+        <li>Mentor Certificate of Completion, 2024 Research Discovery Program, University of California, Irvine (June 2024).</li>
+        <li>DE&amp;I Foundations Mentor Training, Mentor Collective (November 2023).</li>
+        <li>Student Success Mentor Training, Mentor Collective (September 2023).</li>
+        <li>UCI Community Police Academy, Class #6, University of California, Irvine Police Department (November 2022).</li>
+        <li>2020–2021 Inclusive Excellence Certificate Program, University of California, Irvine (October 2021).</li>
+        <li>UCI Newkirk Center for Science &amp; Society Certificate in Community-based Research, University of California, Irvine (September 2021).</li>
+        <li>Introduction to Incident Command System, Emergency Management Institute, FEMA (March 2020).</li>
+        <li>Basic Incident Command System for Initial Response, Emergency Management Institute, FEMA (March 2020).</li>
+        <li>California Bureau of Security and Investigative Services “Powers to Arrest” and “Weapons of Mass Destruction,” Practical Defense Systems (February 2020).</li>
+        <li>Human Subjects Research Basic Course for Social-Behavioral-Investigators, CITI Program (July 2019).</li>
+        <li>Human Subjects Research Basic Course for Social-Behavioral-Educational Researchers, CITI Program (July 2019).</li>
+        <li>Harassment Prevention for Supervisors (CA), California Chamber of Commerce (June 2019).</li>
+        <li>Criminal Justice, Ventura Community College, Ventura, CA (2017).</li>
+        <li>Transfer Studies: General Education, Ventura Community College, Ventura, CA (2017).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section class="card section" id="skills" style="margin-top:18px">
+    <h2>Technical And Software Skills</h2>
+
+    <div class="item">
+      <div class="role">Quantitative, Spatial, And Computational Methods</div>
+      <ul class="list-tight">
+        <li>Stata, IBM SPSS Statistics, Microsoft Excel (statistical analysis and data management).</li>
+        <li>ArcGIS Pro (spatial analysis, crime mapping, and geocoding).</li>
+        <li>Python (data management, web scraping, and geocoding).</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Productivity And Documentation</div>
+      <ul class="list-tight">
+        <li>Microsoft Office (Word and PowerPoint).</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Specialized Systems</div>
+      <ul class="list-tight">
+        <li>Detective Case Tracking System (DCTS).</li>
+        <li>Meditech Electronic Health Record.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL AFFILIATIONS -->
+  <section class="card section soft" id="affiliations" style="margin-top:18px">
+    <h2>Professional Affiliations</h2>
+
+    <div class="item">
+      <div class="role">Scholarly Memberships</div>
+      <ul class="list-tight">
+        <li>Association for Public Policy Analysis and Management (APPAM).</li>
+        <li>American Society of Criminology (ASC).</li>
+        <li>Western Society of Criminology (WSC).</li>
+        <li>Law and Society Association (LSA).</li>
+        <li>Society for Advancement of Chicanos/Hispanics &amp; Native Americans in Science (SACNAS).</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Honor Society Memberships</div>
+      <ul class="list-tight">
+        <li>Alpha Phi Sigma National Criminal Justice Honor Society.</li>
+        <li>The National Society of Leadership and Success Honor Society.</li>
+        <li>Golden Key International Honor Society.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="role">Club Memberships</div>
+      <ul class="list-tight">
+        <li>Criminology and Justice Studies Club, California State University, Northridge (until graduation, 2019).</li>
+      </ul>
+    </div>
+  </section>
 </main>
 
 <footer>
