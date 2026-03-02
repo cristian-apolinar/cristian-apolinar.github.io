@@ -1,376 +1,648 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cristian Apolinar</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cristian Apolinar</title>
 
-  <meta name="description" content="Cristian Apolinar — Doctoral Candidate in Criminology, Law & Society (UC Irvine). Quantitative and spatial criminology: GIS, geocoding, and applied statistics." />
+    <meta
+      name="description"
+      content="Cristian Apolinar — Doctoral Candidate in Criminology, Law & Society (UC Irvine). Quantitative and spatial criminology: GIS, geocoding, and applied statistics."
+    />
 
-  <!-- Favicon (transparent PNG) -->
-  <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
 
-  <style>
-    :root{
-      --bg:#000000;
-      --card:rgba(0,0,0,.55);
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.72);
-      --line:rgba(255,255,255,.12);
-      --accent:#2f8cff;
-      --radius:18px;
-      --shadow:0 14px 40px rgba(0,0,0,.55);
-      --max:1100px;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 520px at 15% 0%, rgba(47,140,255,.20), transparent 60%),
-        radial-gradient(900px 520px at 90% 10%, rgba(47,140,255,.12), transparent 55%),
-        var(--bg);
-    }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    header{
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(10px);
-      background: rgba(0,0,0,.55);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .brand{display:flex; align-items:center; gap:10px; min-width:200px}
-    /* Bigger logo */
-    .brand img{width:48px; height:48px}
-    .brand .name{letter-spacing:.2px; font-weight:700}
-    .links{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
-    .links a{color:var(--muted)}
-    .links a:hover{color:var(--text)}
-    main{max-width:var(--max); margin:0 auto; padding:26px 18px 64px}
-    .card{
-      border:1px solid var(--line);
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .hero{
-      display:grid;
-      grid-template-columns: 160px 1fr;
-      gap:18px;
-      padding:22px;
-    }
-    .avatar{
-      width:160px; height:160px;
-      border-radius:22px;
-      object-fit:cover;
-      border:1px solid var(--line);
-      background:#0a0a0a;
-    }
-    h1{margin:0 0 6px; font-size:30px; line-height:1.2}
-    h2{margin:0 0 10px; font-size:18px}
-    .subtitle{margin:0 0 12px; color:var(--muted)}
-    .muted{color:var(--muted)}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .badge{
-      border:1px solid var(--line);
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:13px;
-      background:rgba(255,255,255,.03);
-    }
-    .section{padding:18px}
-    ul{margin:10px 0 0 20px}
-    .list-tight li{margin:6px 0}
-    .kpi{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .pill{
-      font-size:13px; padding:5px 10px; border-radius:999px;
-      border:1px solid var(--line); color:var(--muted);
-      background:rgba(255,255,255,.03);
-    }
-    .item{padding:10px 0; border-top:1px solid var(--line);}
-    .item:first-of-type{border-top:none; padding-top:0}
-    .small{font-size:14px}
-    .two-col{columns:2; column-gap:24px}
-    .meta{color:var(--muted); font-size:14px}
-    .role{font-weight:600}
-    .nowrap{white-space:nowrap}
-    footer{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:18px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-    }
-    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
-    @media (max-width:860px){
-      .hero{grid-template-columns:1fr}
-      .avatar{width:130px; height:130px}
-      .two-col{columns:1}
-      .brand{min-width:auto}
-    }
-  </style>
-</head>
+    <style>
+      :root {
+        --bg: #000000;
+        --card: rgba(0, 0, 0, 0.55);
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.72);
+        --line: rgba(255, 255, 255, 0.12);
+        --accent: #2f8cff;
+        --radius: 18px;
+        --shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+        --max: 1100px;
+        --header-offset: 77px; /* 48px logo + 28px padding + 1px border */
+        color-scheme: dark;
+      }
 
-<body>
-<header>
-  <div class="nav">
-    <div class="brand">
-      <img src="/favicon.png" alt="CA logo" />
-      <div class="name">Cristian Apolinar</div>
-    </div>
-    <nav class="links" aria-label="Primary">
-      <a href="#education">Education</a>
-      <a href="#awards">Honors and Awards</a>
-      <a href="#publications">Publications</a>
-      <a href="#presentations">Presentations</a>
-      <a href="#teaching">Teaching Experience</a>
-      <a href="#affiliations">Affiliations</a>
-      <a href="#news">News</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+      * {
+        box-sizing: border-box;
+      }
 
-<main>
-  <!-- HERO -->
-  <section class="card hero" id="home">
-    <img class="avatar" src="headshot.jpg" alt="Headshot of Cristian Apolinar" />
-    <div>
-      <h1>Cristian Apolinar</h1>
-      <p class="subtitle">
-        Doctoral Candidate | Criminology, Law &amp; Society | University of California, Irvine
-      </p>
+      html {
+        scroll-behavior: smooth;
+      }
 
-      <!-- Biography -->
-      <p>
-        I study proactive policing and its community-level consequences, with a focus on how place-based enforcement strategies shape neighborhood conditions and equity.
-        My work combines longitudinal and spatial methods to evaluate policy impacts and produce findings that are interpretable for both scholarly and practitioner audiences.
-      </p>
+      section[id] {
+        scroll-margin-top: var(--header-offset);
+      }
 
-      <div class="badges" aria-label="Methods and tools">
-        <span class="badge">Stata</span>
-        <span class="badge">ArcGIS Pro</span>
-        <span class="badge">Python</span>
-        <span class="badge">MS Office (Word & PowerPoint)</span>
+      body {
+        margin: 0;
+        font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+          Noto Sans, sans-serif;
+        color: var(--text);
+        background: radial-gradient(
+            900px 520px at 15% 0%,
+            rgba(47, 140, 255, 0.2),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 520px at 90% 10%,
+            rgba(47, 140, 255, 0.12),
+            transparent 55%
+          ),
+          var(--bg);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.55);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 200px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand .name {
+        letter-spacing: 0.2px;
+        font-weight: 700;
+      }
+
+      .links {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .links a {
+        color: var(--muted);
+      }
+
+      .links a:hover {
+        color: var(--text);
+      }
+
+      main {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 26px 18px 64px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 18px;
+        padding: 22px;
+      }
+
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 22px;
+        object-fit: cover;
+        border: 1px solid var(--line);
+        background: #0a0a0a;
+      }
+
+      h1 {
+        margin: 0 0 6px;
+        font-size: 30px;
+        line-height: 1.2;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .subtitle {
+        margin: 0 0 12px;
+        color: var(--muted);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .badge {
+        border: 1px solid var(--line);
+        color: var(--muted);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .section {
+        padding: 18px;
+      }
+
+      ul {
+        margin: 10px 0 0 20px;
+      }
+
+      .list-tight li {
+        margin: 6px 0;
+      }
+
+      .kpi {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .pill {
+        font-size: 13px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .item {
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .item:first-of-type {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .small {
+        font-size: 14px;
+      }
+
+      .two-col {
+        columns: 2;
+        column-gap: 24px;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .role {
+        font-weight: 600;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+      }
+
+      footer {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 18px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+      }
+
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .avatar {
+          width: 130px;
+          height: 130px;
+        }
+
+        .two-col {
+          columns: 1;
+        }
+
+        .brand {
+          min-width: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER / NAV -->
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <img src="/favicon.png" alt="CA logo" />
+          <div class="name">Cristian Apolinar</div>
+        </div>
+
+        <nav class="links" aria-label="Primary">
+          <a href="#education">Education</a>
+          <a href="#awards">Honors and Awards</a>
+          <a href="#publications">Publications</a>
+          <a href="#presentations">Presentations</a>
+          <a href="#teaching">Teaching Experience</a>
+          <a href="#affiliations">Affiliations</a>
+          <a href="#news">News</a>
+          <a href="#cv">CV</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- EDUCATION -->
-  <section class="card section" id="education" style="margin-top:18px">
-    <h2>Education</h2>
+    <main>
+      <!-- HERO -->
+      <section class="card hero" id="home">
+        <img class="avatar" src="headshot.jpg" alt="Headshot of Cristian Apolinar" />
 
-    <div class="item">
-      <div>Ph.D., Criminology, Law &amp; Society, University of California, Irvine <span class="meta">(anticipated June 2026)</span></div>
-    </div>
-    <div class="item">
-      <div>M.A., Social Ecology, University of California, Irvine <span class="meta">(June 2023)</span></div>
-    </div>
-    <div class="item">
-      <div>B.A., Criminology &amp; Justice Studies, California State University, Northridge <span class="meta">(December 2019)</span></div>
-    </div>
-    <div class="item">
-      <div>A.A., Sociology, Ventura College <span class="meta">(May 2018)</span></div>
-    </div>
-    <div class="item">
-      <div>A.S., Criminal Justice, Ventura College <span class="meta">(December 2017)</span></div>
-    </div>
-    <div class="item">
-      <div>A.S., Administration of Justice, Ventura College <span class="meta">(December 2017)</span></div>
-    </div>
-    <div class="item">
-      <div>A.A., Social And Behavioral Sciences, Ventura College <span class="meta">(December 2017)</span></div>
-    </div>
-  </section>
+        <div>
+          <h1>Cristian Apolinar</h1>
+          <p class="subtitle">
+            Doctoral Candidate | Criminology, Law &amp; Society | University of
+            California, Irvine
+          </p>
 
-  <!-- HONORS AND AWARDS -->
-  <section class="card section" id="awards" style="margin-top:18px">
-    <h2>Honors and Awards</h2>
-    <ul class="list-tight">
-      <li>CLS Internal Quarterly Fellowship (CIQF)<span class="meta">, Department of Criminology, Law &amp; Society, University of California, Irvine (January 2026)</span></li>
-      <li>NextGen Pathways Mentor Award<span class="meta">, University of California, Irvine (July 2024; $100)</span></li>
-      <li>Research Discovery Program (RDP) Mentor Fellowship<span class="meta">, University of California, Irvine (June 2024; $750)</span></li>
-      <li>Research Discovery Program (RDP) Mentor Fellowship<span class="meta">, University of California, Irvine (March 2024; $750)</span></li>
-      <li>Criminology, Law &amp; Society Pedagogical Certificate Program Fellowship<span class="meta">, University of California, Irvine (December 2023; $1,000)</span></li>
-      <li>The Chancellor’s Doctoral Incentive Program (CDIP) Fellowship<span class="meta">, California State University: Office of the Chancellor (June 2020; $30,000)</span></li>
-      <li>Community College Transfer Award<span class="meta">, Department of Criminology &amp; Justice Studies, California State University, Northridge (May 2020; $500)</span></li>
-      <li>Community Volunteer Award<span class="meta">, Los Angeles Police Department: Devonshire Community Police Station (December 2019)</span></li>
-      <li>Sally Casanova Scholarship<span class="meta">, California Pre-Doctoral Program, California State University: Office of the Chancellor (June 2019; $3,000)</span></li>
-    </ul>
-  </section>
-  
-  <!-- PUBLICATIONS -->
-  <section class="card section" id="publications" style="margin-top:18px">
-    <h2>Publications</h2>
+          <p>
+            I study proactive policing and its community-level consequences, with a
+            focus on how place-based enforcement strategies shape neighborhood
+            conditions and equity. My work combines longitudinal and spatial methods
+            to evaluate policy impacts and produce findings that are interpretable
+            for both scholarly and practitioner audiences.
+          </p>
 
-    <div class="item">
-      <div class="small">
-        Geller, A., Al-Naiem, K., Apolinar, C., Hobby, S., Iliff, C., Jones, P., Livings, M., Ornelas, Y., & Yang, P. (2025).
-        Aggressive policing as an individual and environmental social determinant of health among urban adolescents. Manuscript under review.
-      </div>
-    </div>
-  </section>
+          <div class="badges" aria-label="Methods and tools">
+            <span class="badge">Stata</span>
+            <span class="badge">ArcGIS Pro</span>
+            <span class="badge">Python</span>
+            <span class="badge">MS Office (Word &amp; PowerPoint)</span>
+          </div>
+        </div>
+      </section>
 
-  <!-- PRESENTATIONS -->
-  <section class="card section" id="presentations" style="margin-top:18px">
-    <h2>Presentations</h2>
+      <!-- EDUCATION -->
+      <section class="card section" id="education" style="margin-top: 18px">
+        <h2>Education</h2>
 
-    <div class="item small">
-      Apolinar, C. (2025, November). Examining the secondary effects of the LAPD’s Operation LASER on Los Angeles neighborhoods [Conference presentation]. Association for Public Policy Analysis and Management (APPAM), Seattle, WA, United States.
-    </div>
+        <div class="item">
+          <div>
+            Ph.D., Criminology, Law &amp; Society, University of California, Irvine
+            <span class="meta">(anticipated June 2026)</span>
+          </div>
+        </div>
 
-    <div class="item small">
-      Apolinar, C. (2025, February). The collateral consequences of proactive policing: Examining potential impacts on assessment scores [Conference presentation]. Western Society of Criminology (WSC), Seattle, WA, United States.
-    </div>
+        <div class="item">
+          <div>
+            M.A., Social Ecology, University of California, Irvine
+            <span class="meta">(June 2023)</span>
+          </div>
+        </div>
 
-    <div class="item small">
-      Zavita, K. R., Alvarez, G., Punla, C., Apolinar, C., &amp; Aguirre, A. (2024, November). ASC presidential panel: Training the teachers of tomorrow during trying times [Conference presentation]. American Society of Criminology (ASC), San Francisco, CA, United States.
-    </div>
+        <div class="item">
+          <div>
+            B.A., Criminology &amp; Justice Studies, California State University,
+            Northridge <span class="meta">(December 2019)</span>
+          </div>
+        </div>
 
-    <div class="item small">
-      Apolinar, C., Bencomo, A., Cogswell, H., Lewis, T., Mounts, I., Rivera, B., Sta. Cruz, S., Wang, C., &amp; Serpas, D. (2024, Fall).
-      Identifying and addressing disparities in high DFW courses: Insights and proposed actions [Interactive gallery walk presentation]. Data Action Project Interactive Gallery Walk, Chancellor’s Doctoral Incentive Program (CDIP), California State University (CSU) Chancellor’s Office, Online.
-    </div>
+        <div class="item">
+          <div>
+            A.A., Sociology, Ventura College <span class="meta">(May 2018)</span>
+          </div>
+        </div>
 
-    <div class="item small">
-      Apolinar, C. (2024, February). The impact of hot spot policing on neighborhood desirability [Conference presentation]. Western Society of Criminology (WSC), Long Beach, CA, United States.
-    </div>
+        <div class="item">
+          <div>
+            A.S., Criminal Justice, Ventura College
+            <span class="meta">(December 2017)</span>
+          </div>
+        </div>
 
-    <div class="item small">
-      Apolinar, C. (2022, February). Examining the secondary effects of the LAPD’s Operation LASER on Los Angeles neighborhoods [Conference presentation]. Western Society of Criminology (WSC), Honolulu, HI, United States. <span class="meta">(Preliminary results)</span>
-    </div>
+        <div class="item">
+          <div>
+            A.S., Administration of Justice, Ventura College
+            <span class="meta">(December 2017)</span>
+          </div>
+        </div>
 
-    <div class="item small">
-      Apolinar, C., &amp; Ramirez, N. G. (2019, November). Examining the relationship between financial disadvantage and contact with the police [Conference presentation]. American Society of Criminology (ASC), San Francisco, CA, United States.
-    </div>
-  </section>
+        <div class="item">
+          <div>
+            A.A., Social And Behavioral Sciences, Ventura College
+            <span class="meta">(December 2017)</span>
+          </div>
+        </div>
+      </section>
 
-  <!-- TEACHING -->
-  <section class="card section" id="teaching" style="margin-top:18px">
-    <h2>Teaching Experience</h2>
+      <!-- HONORS AND AWARDS -->
+      <section class="card section" id="awards" style="margin-top: 18px">
+        <h2>Honors and Awards</h2>
 
-    <div class="role">Section Instructor (Coordinated with Primary Instructor)</div>
-    <ul class="list-tight">
-      <li>Data Analysis II - Lab Instructor (Winter 2024)</li>
-      <li>Research Design - Discussion Section Instructor (Winter 2023)</li>
-    </ul>
-  <div class="item">    
-    <div class="role">Teaching Assistant</div>
-    <ul class="list-tight">
-      <li>Introduction to Criminology, Law &amp; Society (Winter 2026)</li>
-      <li>Crime, Law &amp; Trauma (Fall 2025)</li>
-      <li>Homeland Security &amp; Society (Spring 2025)</li>
-      <li>Fundamentals of Criminology, Law &amp; Society (Winter 2025)</li>
-      <li>Forensic Science, Law, And Society (Fall 2024)</li>
-      <li>Miscarriages of Justice (Fall 2024)</li>
-      <li>Surveillance And Society (Winter 2024)</li>
-      <li>Fundamentals of Criminology, Law &amp; Society (Fall 2023)</li>
-      <li>Introduction to Criminology, Law &amp; Society (Spring 2023)</li>
-      <li>Research Design (Winter 2023)</li>
-      <li>Theories of Punishment (Fall 2022)</li>
-      <li>Crime Hot Spots (Winter 2022)</li>
-      <li>The Death Penalty (Fall 2021)</li>
-      <li>Violence In Society (Spring 2021)</li>
-      <li>Field Study Writing Seminar (Winter 2021)</li>
-    </ul>
-    </div>
-  </section>
+        <ul class="list-tight">
+          <li>
+            CLS Internal Quarterly Fellowship (CIQF)
+            <span class="meta"
+              >, Department of Criminology, Law &amp; Society, University of
+              California, Irvine (January 2026)</span
+            >
+          </li>
+          <li>
+            NextGen Pathways Mentor Award
+            <span class="meta">, University of California, Irvine (July 2024; $100)</span>
+          </li>
+          <li>
+            Research Discovery Program (RDP) Mentor Fellowship
+            <span class="meta">, University of California, Irvine (June 2024; $750)</span>
+          </li>
+          <li>
+            Research Discovery Program (RDP) Mentor Fellowship
+            <span class="meta">, University of California, Irvine (March 2024; $750)</span>
+          </li>
+          <li>
+            Criminology, Law &amp; Society Pedagogical Certificate Program Fellowship
+            <span class="meta">, University of California, Irvine (December 2023; $1,000)</span>
+          </li>
+          <li>
+            The Chancellor’s Doctoral Incentive Program (CDIP) Fellowship
+            <span class="meta"
+              >, California State University: Office of the Chancellor (June 2020;
+              $30,000)</span
+            >
+          </li>
+          <li>
+            Community College Transfer Award
+            <span class="meta"
+              >, Department of Criminology &amp; Justice Studies, California State
+              University, Northridge (May 2020; $500)</span
+            >
+          </li>
+          <li>
+            Community Volunteer Award
+            <span class="meta"
+              >, Los Angeles Police Department: Devonshire Community Police Station
+              (December 2019)</span
+            >
+          </li>
+          <li>
+            Sally Casanova Scholarship
+            <span class="meta"
+              >, California Pre-Doctoral Program, California State University: Office
+              of the Chancellor (June 2019; $3,000)</span
+            >
+          </li>
+        </ul>
+      </section>
 
-  <!-- AFFILIATIONS -->
-  <section class="card section" id="affiliations" style="margin-top:18px">
-    <h2>Affiliations</h2>
+      <!-- PUBLICATIONS -->
+      <section class="card section" id="publications" style="margin-top: 18px">
+        <h2>Publications</h2>
 
-    <div class="item">
-      <div class="role">Scholarly Memberships</div>
-      <ul class="list-tight">
-        <li>Association for Public Policy Analysis and Management (APPAM)</li>
-        <li>American Society of Criminology (ASC)</li>
-        <li>Western Society of Criminology (WSC)</li>
-        <li>Law and Society Association (LSA)</li>
-        <li>Society for Advancement of Chicanos/Hispanics &amp; Native Americans in Science (SACNAS)</li>
-      </ul>
-    </div>
+        <div class="item">
+          <div class="small">
+            Geller, A., Al-Naiem, K., Apolinar, C., Hobby, S., Iliff, C., Jones, P.,
+            Livings, M., Ornelas, Y., &amp; Yang, P. (2025). Aggressive policing as an
+            individual and environmental social determinant of health among urban
+            adolescents. Manuscript under review.
+          </div>
+        </div>
+      </section>
 
-    <div class="item">
-      <div class="role">Honor Society Memberships</div>
-      <ul class="list-tight">
-        <li>Alpha Phi Sigma National Criminal Justice Honor Society</li>
-        <li>The National Society of Leadership and Success Honor Society</li>
-        <li>Golden Key International Honor Society</li>
-      </ul>
-    </div>
-  </section>
+      <!-- PRESENTATIONS -->
+      <section class="card section" id="presentations" style="margin-top: 18px">
+        <h2>Presentations</h2>
 
-  <!-- NEWS -->
-  <section class="card section" id="news" style="margin-top:18px">
-    <h2>News</h2>
-    
-    <div class="item">
-      <div class="role">Livable Cities Lab Evaluates Community Response Program</div>
-      <div class="meta small">
-        School of Social Ecology | University of California, Irvine ·
-        <a href="https://socialecology.uci.edu/news/livable-cities-lab-evaluates-community-response-program" target="_blank" rel="noreferrer">Read more</a>
-      </div>
-    </div>
+        <div class="item small">
+          Apolinar, C. (2025, November). Examining the secondary effects of the LAPD’s
+          Operation LASER on Los Angeles neighborhoods [Conference presentation].
+          Association for Public Policy Analysis and Management (APPAM), Seattle, WA,
+          United States.
+        </div>
 
-    <div class="item">
-      <div class="role">15 Northridge Students Named Sally Casanova Pre-Doctoral Scholars by CSU</div>
-      <div class="meta small">
-        CSUN Today | California State University, Northridge ·
-        <a href="https://csunshinetoday.csun.edu/education/15-northridge-students-named-sally-casanova-pre-doctoral-scholars-by-csu" target="_blank" rel="noreferrer">Read more</a>
-      </div>
-    </div>
-  </section>
+        <div class="item small">
+          Apolinar, C. (2025, February). The collateral consequences of proactive
+          policing: Examining potential impacts on assessment scores [Conference
+          presentation]. Western Society of Criminology (WSC), Seattle, WA, United
+          States.
+        </div>
 
-  <!-- CV -->
-  <section class="card section" id="cv" style="margin-top:18px">
-    <h2>Curriculum Vitae</h2>
-  
-  <div class="item">
-    <div class="small">  
-      <a href="cv.pdf" class="btn" target="_blank">Download CV (Coming Soon)</a>
-    </div>
-  </section>
+        <div class="item small">
+          Zavita, K. R., Alvarez, G., Punla, C., Apolinar, C., &amp; Aguirre, A. (2024,
+          November). ASC presidential panel: Training the teachers of tomorrow during
+          trying times [Conference presentation]. American Society of Criminology
+          (ASC), San Francisco, CA, United States.
+        </div>
 
+        <div class="item small">
+          Apolinar, C., Bencomo, A., Cogswell, H., Lewis, T., Mounts, I., Rivera, B.,
+          Sta. Cruz, S., Wang, C., &amp; Serpas, D. (2024, Fall). Identifying and
+          addressing disparities in high DFW courses: Insights and proposed actions
+          [Interactive gallery walk presentation]. Data Action Project Interactive
+          Gallery Walk, Chancellor’s Doctoral Incentive Program (CDIP), California
+          State University (CSU) Chancellor’s Office, Online.
+        </div>
 
-  <!-- CONTACT SECTION -->
-  <section class="card section" id="contact" style="margin-top:18px">
-    <h2>Contact</h2>  
-    
-    <div class="item">
-      <div class="role">Email</div>
-      <a href="mailto:apolinac@uci.edu">apolinac@uci.edu</a>
-    </div>
-  </div>
-    
-    <div class="item">
-      <div class="role">LinkedIn</div>
-      <a href="https://linkedin.com/in/cristianapolinar" target="_blank"> linkedin.com/in/cristianapolinar</a>
-      </div>
-  </div>
-</section>
+        <div class="item small">
+          Apolinar, C. (2024, February). The impact of hot spot policing on neighborhood
+          desirability [Conference presentation]. Western Society of Criminology (WSC),
+          Long Beach, CA, United States.
+        </div>
 
-</main>
+        <div class="item small">
+          Apolinar, C. (2022, February). Examining the secondary effects of the LAPD’s
+          Operation LASER on Los Angeles neighborhoods [Conference presentation].
+          Western Society of Criminology (WSC), Honolulu, HI, United States.
+          <span class="meta">(Preliminary results)</span>
+        </div>
 
-<footer>
-  © <span id="y"></span> Cristian Apolinar · Built on GitHub Pages
-</footer>
+        <div class="item small">
+          Apolinar, C., &amp; Ramirez, N. G. (2019, November). Examining the
+          relationship between financial disadvantage and contact with the police
+          [Conference presentation]. American Society of Criminology (ASC), San
+          Francisco, CA, United States.
+        </div>
+      </section>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-</body>
+      <!-- TEACHING -->
+      <section class="card section" id="teaching" style="margin-top: 18px">
+        <h2>Teaching Experience</h2>
+
+        <div class="role">Section Instructor (Coordinated with Primary Instructor)</div>
+        <ul class="list-tight">
+          <li>Data Analysis II - Lab Instructor (Winter 2024)</li>
+          <li>Research Design - Discussion Section Instructor (Winter 2023)</li>
+        </ul>
+
+        <div class="item">
+          <div class="role">Teaching Assistant</div>
+          <ul class="list-tight">
+            <li>Introduction to Criminology, Law &amp; Society (Winter 2026)</li>
+            <li>Crime, Law &amp; Trauma (Fall 2025)</li>
+            <li>Homeland Security &amp; Society (Spring 2025)</li>
+            <li>Fundamentals of Criminology, Law &amp; Society (Winter 2025)</li>
+            <li>Forensic Science, Law, And Society (Fall 2024)</li>
+            <li>Miscarriages of Justice (Fall 2024)</li>
+            <li>Surveillance And Society (Winter 2024)</li>
+            <li>Fundamentals of Criminology, Law &amp; Society (Fall 2023)</li>
+            <li>Introduction to Criminology, Law &amp; Society (Spring 2023)</li>
+            <li>Research Design (Winter 2023)</li>
+            <li>Theories of Punishment (Fall 2022)</li>
+            <li>Crime Hot Spots (Winter 2022)</li>
+            <li>The Death Penalty (Fall 2021)</li>
+            <li>Violence In Society (Spring 2021)</li>
+            <li>Field Study Writing Seminar (Winter 2021)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- AFFILIATIONS -->
+      <section class="card section" id="affiliations" style="margin-top: 18px">
+        <h2>Affiliations</h2>
+
+        <div class="item">
+          <div class="role">Scholarly Memberships</div>
+          <ul class="list-tight">
+            <li>Association for Public Policy Analysis and Management (APPAM)</li>
+            <li>American Society of Criminology (ASC)</li>
+            <li>Western Society of Criminology (WSC)</li>
+            <li>Law and Society Association (LSA)</li>
+            <li>
+              Society for Advancement of Chicanos/Hispanics &amp; Native Americans in
+              Science (SACNAS)
+            </li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="role">Honor Society Memberships</div>
+          <ul class="list-tight">
+            <li>Alpha Phi Sigma National Criminal Justice Honor Society</li>
+            <li>The National Society of Leadership and Success Honor Society</li>
+            <li>Golden Key International Honor Society</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- NEWS -->
+      <section class="card section" id="news" style="margin-top: 18px">
+        <h2>News</h2>
+
+        <div class="item">
+          <div class="role">Livable Cities Lab Evaluates Community Response Program</div>
+          <div class="meta small">
+            School of Social Ecology | University of California, Irvine ·
+            <a
+              href="https://socialecology.uci.edu/news/livable-cities-lab-evaluates-community-response-program"
+              target="_blank"
+              rel="noreferrer"
+              >Read more</a
+            >
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            15 Northridge Students Named Sally Casanova Pre-Doctoral Scholars by CSU
+          </div>
+          <div class="meta small">
+            CSUN Today | California State University, Northridge ·
+            <a
+              href="https://csunshinetoday.csun.edu/education/15-northridge-students-named-sally-casanova-pre-doctoral-scholars-by-csu"
+              target="_blank"
+              rel="noreferrer"
+              >Read more</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- CV -->
+      <section class="card section" id="cv" style="margin-top: 18px">
+        <h2>Curriculum Vitae</h2>
+
+        <div class="item">
+          <div class="small">
+            <a href="cv.pdf" class="btn" target="_blank" rel="noreferrer">
+              Download CV (Coming Soon)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card section" id="contact" style="margin-top: 18px">
+        <h2>Contact</h2>
+
+        <div class="item">
+          <div class="role">Email</div>
+          <a href="mailto:apolinac@uci.edu">apolinac@uci.edu</a>
+        </div>
+
+        <div class="item">
+          <div class="role">LinkedIn</div>
+          <a
+            href="https://linkedin.com/in/cristianapolinar"
+            target="_blank"
+            rel="noreferrer"
+            >linkedin.com/in/cristianapolinar</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      © <span id="y"></span> Cristian Apolinar · Built on GitHub Pages
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
